@@ -26,4 +26,18 @@ document.getElementById('key-pad').addEventListener('click', function (event) {
         const newNumber = previousNumber + number;
         calcInput.value = newNumber;
     }
-})
+});
+
+function verifyPin() {
+    const pin = document.getElementById('display-pin').value;
+    const typedNumber = document.getElementById('typed-numbers').value;
+    const successMassage = document.getElementById('notify-success');
+    const failError = document.getElementById('notify-fail');
+    if (pin == typedNumber) {
+        successMassage.style.display = 'block';
+        failError.style.display = 'none';
+    } else {
+        failError.style.display = 'block';
+        successMassage.style.display = 'none';
+    }
+}
